@@ -2,8 +2,21 @@
   "main": {
     "links": [
       {
-        "name": "Home",
-        "route_name": "home",
+        "name": "Pages Table",
+        "route_name": "pages.index",
+        "icon": "document-o",
+        "exclude_route": true
+      },
+      {
+        "name": "Create Page",
+        "route_name": "page-builder.create",
+        "icon": "document-o",
+        "exclude_route": true
+      },
+      {
+        "name": "Edit Sample",
+        "url": "page-builder/my-first-page/edit",
+        "icon": "document-o",
         "exclude_route": true
       }
     ]

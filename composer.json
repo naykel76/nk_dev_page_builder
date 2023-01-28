@@ -74,6 +74,13 @@
             "options": {
                 "symlink": true
             }
+        },
+        "naykel/pageit": {
+            "type": "path",
+            "url": "C:\\Users\\nayke\\Desktop\\htdocs\\nk_packages\\pageit",
+            "options": {
+                "symlink": true
+            }
         }
     }
 }
