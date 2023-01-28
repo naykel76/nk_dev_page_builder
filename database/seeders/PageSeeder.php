@@ -76,6 +76,11 @@ class PageSeeder extends Seeder
                     ],
                 ),
             ],
+            [
+                'title' => 'Text Editor Block',
+                'type' => 'textarea',
+                'body' => 'This is the text area body',
+            ],
 
         ]);
     }

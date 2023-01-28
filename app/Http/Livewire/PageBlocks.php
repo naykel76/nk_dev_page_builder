@@ -3,6 +3,8 @@
 namespace App\Http\Livewire;
 
 use Naykel\Gotime\Traits\WithCrud;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Str;
 use App\Models\PageBlock;
 use Livewire\Component;
 
@@ -14,10 +16,22 @@ class PageBlocks extends Component
     public array $removeBlocks = [];
     public array $blocks = [];
 
-    protected $rules = [
-        'blocks.*.title' => 'required',
-        'blocks.*.body' => 'required',
+    public function rules()
+    {
+        return [
+            'blocks.*.body' => 'required',
+            'blocks.*.title' => [
+                'exclude_if:blocks.*.type,accordion,editor', 'required'
+            ],
+        ];
+    }
+
+    protected $messages = [
+        'blocks.required' => 'Please add at least one one content block.',
+        'blocks.*.title.required' => 'This block section must have a title.',
+        'blocks.*.body.required' => 'This block section must have a body.',
     ];
+
 
     public function testSomething()
     {
@@ -35,6 +49,11 @@ class PageBlocks extends Component
         $this->validate();
         $this->handleBlocks();
         $this->dispatchBrowserEvent('notify', 'Page blocks have been saved');
+    }
+
+    public function getRandomId()
+    {
+        return '_' . Str::rand();
     }
 
     /**
