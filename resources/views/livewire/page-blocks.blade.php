@@ -41,4 +41,8 @@
 
     </div>
 
+    {{-- load editor here to make sure it initializes --}}
+    @once
+        <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+    @endonce
 </div>
