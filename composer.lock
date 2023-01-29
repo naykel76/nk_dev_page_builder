@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "86f3ebd85f38dab0488b335758e324d1",
+    "content-hash": "b8c49668ef60385e9967c0e8147754d7",
     "packages": [
         {
             "name": "brick/math",
@@ -1934,6 +1934,53 @@
             "keywords": [
                 "Laravel",
                 "Naykel"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": false
+            }
+        },
+        {
+            "name": "naykel/pageit",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "C:/Users/nayke/Desktop/htdocs/nk_packages/pageit",
+                "reference": "6bb2d422c49229b711cdaadbdbff4c87a6ef461c"
+            },
+            "require": {
+                "php": ">=8.0",
+                "spatie/laravel-sluggable": "^3.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Naykel\\Pageit\\PageitServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Naykel\\Pageit\\": "src/",
+                    "Naykel\\Authit\\Database\\": "src/database/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nathan Watts",
+                    "email": "nathan@naykel.com.au",
+                    "homepage": "https://naykel.com.au"
+                }
+            ],
+            "description": "Page management package for NayKel Laravel Applications",
+            "homepage": "https://github.com/naykel76/pageit.git",
+            "keywords": [
+                "Laravel",
+                "Pageit"
             ],
             "transport-options": {
                 "symlink": true,
@@ -8162,7 +8209,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "naykel/gotime": 20
+        "naykel/gotime": 20,
+        "naykel/pageit": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

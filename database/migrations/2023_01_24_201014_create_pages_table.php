@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('slug')->nullable();
             $table->longText('body')->nullable();
             $table->string('image')->nullable();
-            $table->string('type');
+            $table->string('type')->nullable();
             $table->string('layout')->nullable();
             $table->integer('sort_order')->nullable()->default(0);
             $table->dateTime('published_at')->nullable();

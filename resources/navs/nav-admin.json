@@ -2,9 +2,21 @@
 	"main": {
 		"links": [
 			{
-				"name": "Admin",
-				"route_name": "admin",
-				"icon": "dashboard",
+				"name": "Site Pages",
+				"route_name": "admin.pages.index",
+				"icon": "document-o",
+				"exclude_route": true
+			},
+			{
+				"name": "Create Page",
+				"route_name": "admin.pages.create",
+				"icon": "document-o",
+				"exclude_route": true
+			},
+			{
+				"name": "Create Page Builder",
+				"route_name": "admin.page-builder.create",
+				"icon": "document-o",
 				"exclude_route": true
 			}
 		]

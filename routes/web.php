@@ -18,7 +18,7 @@ RouteBuilder::create('nav-main');
 
 /*
 |--------------------------------------------------------------------------
-| admin-local Routes
+| local Routes
 |--------------------------------------------------------------------------
 |
 */
@@ -33,6 +33,20 @@ Route::middleware(['web'])->group(function () {
     Route::prefix('pages')->name('pages')->group(function () {
         Route::get('/', PageTable::class)->name('.index');
     });
+});
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+|
+*/
+
+
+// RouteBuilder::create('nav-admin');
+
+Route::prefix('admin')->name('admin')->group(function () {
+    Route::view('/', 'pages.admin')->name('');
 });
 
 // /** ---------------------------------------------------------------------------

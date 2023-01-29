@@ -2,6 +2,11 @@
   "main": {
     "links": [
       {
+        "name": "Admin",
+        "route_name": "admin",
+        "exclude_route": true
+      },
+      {
         "name": "Pages Table",
         "route_name": "pages.index",
         "icon": "document-o",
