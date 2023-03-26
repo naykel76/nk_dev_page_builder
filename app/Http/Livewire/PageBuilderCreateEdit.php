@@ -3,23 +3,24 @@
 namespace App\Http\Livewire;
 
 use Naykel\Gotime\Traits\WithCrud;
+use Naykel\Pageit\Models\Page;
 use Livewire\Component;
-use App\Models\Page;
 
-class PageBuilder extends Component
+class PageBuilderCreateEdit extends Component
 {
     use WithCrud;
 
     private static $model = Page::class;
     public string $routePrefix = 'page-builder';
-    public array $initialData = ['type' => 'builder'];
+    public array $initialData = ['config' => ['type=' => 'builder']];
     public object $editing;
     public string $title;
 
     protected $rules = [
         'editing.title' => 'required|min:3',
         'editing.body' => 'sometimes',
-        'editing.type' => 'required', // set in initial data
+        'editing.config.type' => 'required'
+        // 'editing.type' => 'required', // set in initial data
     ];
 
     public function mount(Page $page)
@@ -27,11 +28,12 @@ class PageBuilder extends Component
         // if there is a page id, then set editing to the existing record
         $this->editing = $page->id ? $page : $this->makeBlankModel();
         $this->title = $this->setTitle();
+        dd($this->editing);
     }
 
     public function render()
     {
-        return view('livewire.page-builder')
+        return view('livewire.page-builder-create-edit')
             ->layoutData(['title' => $this->title]);
     }
 }

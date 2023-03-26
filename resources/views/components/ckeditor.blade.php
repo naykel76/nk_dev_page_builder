@@ -1,14 +1,13 @@
 @props([ 'for' => null, 'rowClass' => null, ])
 
-<div {{ $attributes->whereDoesntStartWith('wire:model') }}
-    x-data="{ value: @entangle($attributes->wire('model')) }" x-cloak
-    x-init="
+    <div {{ $attributes->whereDoesntStartWith('wire:model') }}
+        x-data="{ value: @entangle($attributes->wire('model')).defer }" x-cloak
+        x-init="
         ClassicEditor.create(document.querySelector('#{{ $editorId }}'))
-
-        {{-- This way, when the user types in the editor, the value property
-        will be updated and the wire:model will be triggered. --}}
         .then(editor => {
-            editor.setData(value);
+            if(value){
+                editor.setData(value);
+            }
             editor.model.document.on('change:data', () => {
                 value = editor.getData();
             });
@@ -18,21 +17,19 @@
         });
         ">
 
-    <textarea name="{{ $for }}" id="{{ $editorId }}" x-model="value" x-on:input.debounce.500ms></textarea>
+        <textarea name="{{ $for }}" id="{{ $editorId }}" x-model="value" x-on:input.debounce.500ms></textarea>
 
-</div>
+    </div>
 
-@once('scripts')
-    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
-@endonce
+    @pushOnce('scripts')
+        <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+    @endPushOnce
 
-@push('styles')
+    @pushOnce('styles')
+        <style>
+            .ck .ck-content {
+                min-height: 250px
+            }
 
-    <style>
-        .ck .ck-content {
-            min-height: 250px
-        }
-
-    </style>
-
-@endpush
+        </style>
+    @endPushOnce

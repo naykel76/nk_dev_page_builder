@@ -23,7 +23,7 @@
                     @endunless
 
                     @if($block['type'] === 'editor')
-                        <x-ckeditor wire:model.defer="blocks.{{ $i }}.body" for="blocks.{{ $i }}.body" placeholder="Block body" class="flex-1" editor-id="{{ '_' . Str::Random() }}" />
+                        <x-ckeditor wire:model="blocks.{{ $i }}.body" for="blocks.{{ $i }}.body" class="flex-1" editor-id="{{ '_' . rand() }}" />
                     @elseif(($block['type'] === 'textarea'))
                         <x-gt-textarea wire:model.defer="blocks.{{ $i }}.body" for="blocks.{{ $i }}.body" placeholder="Block body" rowClass="flex-1" />
                     @else
@@ -41,8 +41,8 @@
 
     </div>
 
-    {{-- load editor here to make sure it initializes --}}
-    @once
+    @pushOnce('scripts')
         <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
-    @endonce
+    @endPushOnce
+
 </div>

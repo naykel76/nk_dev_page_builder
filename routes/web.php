@@ -2,7 +2,7 @@
 
 use Naykel\Gotime\Facades\RouteBuilder;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\{PageBuilder, PageTable};
+use App\Http\Livewire\{PageBuilderCreateEdit, PageTable};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,8 +26,8 @@ RouteBuilder::create('nav-main');
 Route::middleware(['web'])->group(function () {
 
     Route::prefix('page-builder')->name('page-builder')->group(function () {
-        Route::get('/{page:slug}/edit', PageBuilder::class)->name('.edit');
-        Route::get('/create', PageBuilder::class)->name('.create');
+        Route::get('/{page:slug}/edit', PageBuilderCreateEdit::class)->name('.edit');
+        Route::get('/create', PageBuilderCreateEdit::class)->name('.create');
     });
 
     Route::prefix('pages')->name('pages')->group(function () {

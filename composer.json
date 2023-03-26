@@ -14,8 +14,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "naykel/gotime": "dev-master",
-        "naykel/pageit": "dev-master",
-        "spatie/laravel-sluggable": "^3.4"
+        "naykel/pageit": "dev-master"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

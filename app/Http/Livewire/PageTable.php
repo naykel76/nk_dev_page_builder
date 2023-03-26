@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use Naykel\Gotime\Traits\WithDataTable;
-use App\Models\Page;
+use Naykel\Pageit\Models\Page;
 use Livewire\WithPagination;
 use Livewire\Component;
 

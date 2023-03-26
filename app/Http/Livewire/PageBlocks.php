@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use Naykel\Gotime\Traits\WithCrud;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
-use App\Models\PageBlock;
+use Naykel\Pageit\Models\PageBlock;
 use Livewire\Component;
 
 class PageBlocks extends Component
