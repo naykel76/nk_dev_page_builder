@@ -29,7 +29,6 @@ class PageTable extends Component
             ->paginate($this->perPage);
 
         return view('livewire.page-table')->with(['items' => $query])
-            ->layout('layouts.app', ['title' => $this->title]);
+            ->layoutData(['title' => $this->title]);
     }
-
 }

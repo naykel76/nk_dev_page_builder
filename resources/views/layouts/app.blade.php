@@ -2,10 +2,6 @@
 
 <x-gotime-layouts.base :$title>
 
-    @if(class_exists(\Naykel\Authit\Http\Controllers\UserController::class))
-        <x-gotime::top-toolbar />
-    @endif
-
     @includeFirst(['layouts.partials.navbar', 'gotime::layouts.partials.navbar'])
 
     @isset($top)

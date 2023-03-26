@@ -32,6 +32,6 @@ class PageBuilder extends Component
     public function render()
     {
         return view('livewire.page-builder')
-            ->layout('layouts.app', ['title' => $this->title]);
+            ->layoutData(['title' => $this->title]);
     }
 }

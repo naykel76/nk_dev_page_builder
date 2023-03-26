@@ -2,8 +2,9 @@
   "main": {
     "links": [
       {
-        "name": "Admin",
-        "route_name": "admin",
+        "name": "Home",
+        "route_name": "home",
+        "icon": "home",
         "exclude_route": true
       },
       {
